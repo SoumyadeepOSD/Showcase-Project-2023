@@ -2,6 +2,7 @@
 import CircularProgress from "@mui/material/CircularProgress";
 import '../src/App.css';
 import { CollabLogo, ContributeLogo, PlanLogo } from "./Images";
+import { grey } from "@mui/material/colors";
 
 
 const CardData = ({value, key}) => {
@@ -35,15 +36,34 @@ const ShowcaseCard = () => {
     <div className="showcase-card">
       <img src={CollabLogo} height={150} width={150} alt="" />
       <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-evenly'}}>
-        <img src={ContributeLogo} alt="contribute" height={150} width={150}/>
-        <img src={PlanLogo} alt="plan" height={150} width={150}/>
+        <img src={ContributeLogo} alt="contribute" height={150} width={150} className="image-style"/>
+        <img src={PlanLogo} alt="plan" height={150} width={150} className="image-style"/>
       </div>
     </div>
   );
 }
 
+const JobCard = ({name, title, type, stack, url}) => {
+  return(<div className="job-card">
+      <p id="name">{name}</p>
+      <p id="title">{title}</p>
+      <p id="type">{type}</p> 
+      <div className="job-section">
+      {
+        stack.map((e,i)=>{
+            return(
+           e!=null ? <img key={i} src={e.iconUrl} style={{height:30, width:30}} alt={e.name}/>
+            : <p>{e.name}</p>
+          );
+        })
+      }
+      </div>
+      <a href={url} id="apply">Apply</a>
+    </div>);
+}
 
-export {CardData, CircularProgressIndicator, Card, ShowcaseCard};
+
+export {CardData, CircularProgressIndicator, Card, ShowcaseCard, JobCard};
 
 const STYLE = {
   CARDSTYLE_FIRST:{
@@ -82,4 +102,5 @@ const STYLE = {
     right: '0',
     top: '30rem'
   },
+  
 };

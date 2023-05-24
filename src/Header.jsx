@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import '../src/App.css';
+import { ThreedotLogo } from "./Images";
 
 function Header() {
   return (
@@ -11,6 +12,9 @@ function Header() {
             <li><Link to="mentorship" className="tabs">Mentorship</Link></li>
             <li><Link to="content" className="tabs">Manage-Content</Link></li>
         </ul>
+        <div className="hamburger">
+          <img src={ThreedotLogo} height={20} width={20} alt="3dot-logo" />
+        </div>
     </div>
   )
 }
