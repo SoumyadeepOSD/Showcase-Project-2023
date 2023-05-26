@@ -38,7 +38,7 @@ function Shows() {
                   </div>
                 );
               })
-            ):<h1 style={{alignSelf:'center', textAlign:'center'}}>Get Ready to collab🚀</h1>
+            ):<h1 style={{alignSelf:'center', textAlign:'center'}}>Get Shows🚀</h1>
           }
       </section>
     </div>
