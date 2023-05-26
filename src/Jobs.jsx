@@ -1,15 +1,15 @@
 import {useState} from 'react';
 import { JobCard } from './Components';
 
-import REACT_APP_API_KEY from "../env";
 const JOB_URL = "https://cache.showwcase.com/jobs/recommended";
 function Jobs() {
   const[jobdata, setJobdata]=useState(localStorage.getItem('items'))
+  const[formValue, setFormValue] = useState('Enter your API key');
   const fetchData = async() => {
     fetch(JOB_URL,
     {
         headers:{
-            'x-api-key': REACT_APP_API_KEY,
+            'x-api-key': formValue,
         },
     })
     .then((response)=>{
@@ -30,14 +30,21 @@ function Jobs() {
   
   return (
     <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
+      <input
+          style={{padding:10, borderRadius:10, marginTop:'3rem'}}  
+          onChange={e => setFormValue(e.target.value)}
+          placeholder='Please Enter your API key'
+          value={formValue}/>
       <button onClick={fetchData} style={STYLE.buttonStyle}>Get Jobs</button>
       <section className='job-section'>
           {
-            JSON.parse(localStorage.getItem('items')).map((e, i)=>{
+            localStorage.getItem('items')!=null?
+            (JSON.parse(localStorage.getItem('items')).map((e, i)=>{
               return(
                 <JobCard key={i} name={e.company.name} type={e.type} title={e.title} stack={e.stacks} url={e.applyUrl}/>
               );
-            })
+            })):
+            <h1>Work at your dream company💻</h1>
           }
       </section>
     </div>

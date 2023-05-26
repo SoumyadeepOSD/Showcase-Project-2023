@@ -2,7 +2,7 @@
 import CircularProgress from "@mui/material/CircularProgress";
 import '../src/App.css';
 import { CollabLogo, ContributeLogo, PlanLogo } from "./Images";
-import { grey } from "@mui/material/colors";
+
 
 
 const CardData = ({value, key}) => {
@@ -62,8 +62,32 @@ const JobCard = ({name, title, type, stack, url}) => {
     </div>);
 }
 
+const MentorCard = ({data, users}) => {
+  return(
+    <div style={{background:'grey', marginTop:10, padding:20, borderRadius:10}}>
+      <h2>Topic: {data.name}</h2>
+      <h4>Collaborators</h4>
+      {
+        users.map((e,i)=>{
+          var link ="https://www.showwcase.com/"+e.username
+          return(
+            <section style={{background:'black', padding:10, borderRadius:10, marginBottom:2, display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-evenly'}} key={i}>
+            <a style={{color:'white'}} href={link}>
+            <p>{e.displayName}</p>
+            </a>
+            <img
+            style={{height:25, width:25,}} 
+            src="https://cdn1.iconfinder.com/data/icons/interface-travel-and-environment/64/arrow-redirect-interface-512.png"/>
+            </section>
+          );
+        })
+      }
+    </div>
+  );
+}
 
-export {CardData, CircularProgressIndicator, Card, ShowcaseCard, JobCard};
+
+export {CardData, CircularProgressIndicator, Card, ShowcaseCard, JobCard, MentorCard};
 
 const STYLE = {
   CARDSTYLE_FIRST:{
