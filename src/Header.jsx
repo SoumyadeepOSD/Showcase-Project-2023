@@ -9,6 +9,7 @@ function Header() {
             <li><Link style={{}} to="/" className="tabs">Home</Link></li>
             <li><Link to="jobs" className="tabs">Job</Link></li>
             <li><Link to="mentorship" className="tabs">Mentorship</Link></li>
+            <li><Link to="shows" className="tabs">Shows</Link></li>
         </ul>
         <div className="hamburger">
           <img src={ThreedotLogo} height={20} width={20} alt="3dot-logo" />

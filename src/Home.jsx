@@ -15,10 +15,9 @@ const Home = () => {
         <ShowcaseCard/>
       </section>
       <section className='main-content'>
-        <Card text="Find and explore hackathon" imgPath={HackathonLogo} position={1}/>
-        <Card text="Find your dream job easily"imgPath={JobLogo} position={2}/>
-        <Card text="Get mentorship support" imgPath={HelpLogo} position={3}/>
-        <Card text="Manage content at a single click"imgPath={ContentLogo} position={4}/>
+        <Card text="Find your dream job easily"imgPath={JobLogo} position={1}/>
+        <Card text="Get mentorship support" imgPath={HelpLogo} position={2}/>
+        <Card text="Get Shows"imgPath={ContentLogo} position={3}/>
       </section>
     </div>
   )
