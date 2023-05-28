@@ -9,13 +9,13 @@ import { Routes, Route } from "react-router-dom"
 const App = () => {
   return (
     <div>
-          <Header/>
-          <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='jobs' element={<Jobs/>}/>
-            <Route path='mentorship' element={<Mentorship/>}/>
-            <Route path='shows' element={<Shows/>}/>
-          </Routes>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='jobs' element={<Jobs />} />
+        <Route path='mentorship' element={<Mentorship />} />
+        <Route path='shows' element={<Shows />} />
+      </Routes>
     </div>
   )
 }

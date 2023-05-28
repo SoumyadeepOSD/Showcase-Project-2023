@@ -1,6 +1,6 @@
 import '../src/App.css';
 import { Card, ShowcaseCard } from './Components';
-import { HackathonLogo, ContentLogo, HelpLogo, JobLogo } from './Images';
+import { ContentLogo, HelpLogo, JobLogo } from './Images';
 
 const Home = () => {
   return (

@@ -9,4 +9,4 @@ import ThreedotLogo from './assets/threedot.jpg';
 
 
 
-export {HackathonLogo, ContentLogo, HelpLogo, JobLogo, CollabLogo, ContributeLogo, PlanLogo, ThreedotLogo};
+export { HackathonLogo, ContentLogo, HelpLogo, JobLogo, CollabLogo, ContributeLogo, PlanLogo, ThreedotLogo };
